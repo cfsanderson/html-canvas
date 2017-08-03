@@ -1,13 +1,64 @@
 @import 'utility';
 
 $base-text-size: 16px;
-$base-font-family: sans-serif;
+$base-font-family: 'Helvetica neue', sans-serif;
 
 html {
   @include full-height;
 }
 
 body {
-  margin: 0;
+  margin: auto;
   font: $base-text-size / 1 $base-font-family;
+  background-color: #303030;
+  color: #e8e8e8;
+  padding: 50px;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 4em;
+}
+
+canvas {
+  border: 10px solid #585858;
+  background-color: #f2f2f2;
+  margin: 0;
+  border-radius: 20px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: #8beffc;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #8beffc;
+  font-family: $base-font-family;
+}
+
+a:hover {
+  color: #47aebb;
+}
+
+a:visited {
+  color: rgb(59, 161, 218)
 }

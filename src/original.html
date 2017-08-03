@@ -1,4 +1,21 @@
-import './styles/screen.scss'
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+  <ul>
+    <li><button id="source-over">source-over (default)</button></li>
+    <li><button id="destination-over">destination-over</button></li>
+    <li><button id="multiply">multiply</button></li>
+    <li><button id="lighter">lighter</button></li>
+    <li><button id="destination-atop">destination-atop</button></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation">More Info: Canvas Rendering</a></li>
+  </ul>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
 
 const drawingSurface = document.querySelector('#draw');
 const ctx = drawingSurface.getContext('2d');
@@ -16,11 +33,10 @@ let lastX = 0;
 let lastY = 0;
 let hue = 0;
 let direction = true;
-let globalComp = ctx.globalCompositeOperation;
+let globalComp = ctx.globalCompositeOperation
 
 function draw(e) {
-  if (!isDrawing) return;
-  /* stop the function from running when they are not moused down */
+  if(!isDrawing) return; /* stop the function from running when they are not moused down */
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   // start from
@@ -60,7 +76,6 @@ drawingSurface.addEventListener('mousedown', (e) => {
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-
 drawingSurface.addEventListener('mousemove', draw);
 drawingSurface.addEventListener('mouseup', () => isDrawing = false);
 drawingSurface.addEventListener('mouseout', () => isDrawing = false);
@@ -80,15 +95,26 @@ lighter.addEventListener('click', changeGlobalComp);
 const destinationAtop = document.getElementById('destination-atop');
 destinationAtop.addEventListener('click', changeGlobalComp);
 
-const main = () => {
-  document.querySelector('h1').textContent += ''
-}
 
-document.addEventListener('DOMContentLoaded', main)
+</script>
+<style>
+  html, body {
+    margin:0;
+  }
+  canvas {
+    border: 5px solid red;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    background-color: #8beffc;
+    color: black;
+  }
+</style>
 
-// HERE BE DRAGONS... and webpack. Don't touch.
-if (process.env.NODE_ENV !== 'production') require('./index.html')
-if (module.hot) {
-  module.hot.dispose(() => window.location.reload())
-  module.hot.accept(err => console.error(err))
-}
+</body>
+</html>
+-->
